@@ -1,1 +1,67 @@
-<p>registro works!</p>
+<div class="registro-container">
+  <img 
+    class="logo" 
+    src="https://res.cloudinary.com/dmjww2gh5/image/upload/v1765378795/logo_epq_jrplxy.png"
+    alt="Logo EPQ"
+  />
+
+  <div class="card">
+    <h2>Crear cuenta</h2>
+
+    <form [formGroup]="form" (ngSubmit)="enviar()">
+
+      <div class="row">
+        <div class="field">
+          <label>Nombres</label>
+          <input type="text" formControlName="nombres" />
+        </div>
+
+        <div class="field">
+          <label>Apellidos</label>
+          <input type="text" formControlName="apellidos" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label>Documento</label>
+          <input type="text" formControlName="documento" />
+        </div>
+
+        <div class="field">
+          <label>Teléfono</label>
+          <input type="text" formControlName="telefono" />
+        </div>
+      </div>
+
+      <div class="field full">
+        <label>Correo</label>
+        <input type="email" formControlName="correo" />
+      </div>
+
+      <div class="field full">
+        <label>Usuario</label>
+        <input type="text" formControlName="usuario" />
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label>Contraseña</label>
+          <input type="password" formControlName="password" />
+        </div>
+
+        <div class="field">
+          <label>Confirmar contraseña</label>
+          <input type="password" formControlName="confirmar" />
+        </div>
+      </div>
+
+      <button class="btn-guardar" type="submit">Registrar</button>
+
+      <p class="alt">
+        ¿Ya tienes una cuenta?
+        <a routerLink="/login">Inicia sesión</a>
+      </p>
+    </form>
+  </div>
+</div>

@@ -1,1 +1,44 @@
-<p>reportes works!</p>
+<!-- src/app/pages/reportes/reportes.html -->
+<div class="banner">
+  <h2>Reportes Generales</h2>
+  <div class="acciones-banner">
+    <button class="cerrar" (click)="cerrarSesion()">Cerrar sesión</button>
+  </div>
+</div>
+
+<div class="contenedor">
+  <div class="fila fila-top">
+    <div class="campo">
+      <label>Municipio</label>
+      <select [(ngModel)]="municipio">
+        <option value="">Seleccione</option>
+        <option *ngFor="let muni of municipios" [value]="muni">{{ muni }}</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label>Periodo</label>
+      <select [(ngModel)]="periodo">
+        <option value="">Seleccione</option>
+        <option *ngFor="let p of periodos" [value]="p">{{ p }}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="fila fila-bottom">
+    <div class="campo">
+      <label>Desde (fecha)</label>
+      <input type="date" [(ngModel)]="desde" />
+    </div>
+
+    <div class="campo">
+      <label>Hasta (fecha)</label>
+      <input type="date" [(ngModel)]="hasta" />
+    </div>
+  </div>
+
+  <div class="botonera">
+    <button class="btn-generar" (click)="generarReporte()">Generar reporte</button>
+    <button class="btn-descargar" (click)="descargarPDF()">Descargar PDF</button>
+  </div>
+</div>
